@@ -1,11 +1,12 @@
 #import <Foundation/Foundation.h>
 
-@interface Fraction : NSObject
+@interface Fraction : NSObject {
+	int numerator;
+	int denominator;
+}
 - (void) setNumerator: (int) n;
 - (void) setDenominator: (int) d;
 - (void) print;
-int numerator;
-int denominator;
 @end
 
 @implementation Fraction
@@ -43,8 +44,15 @@ int main (int argc, const char *argv[]) {
 	fraction = [fraction init];
 	[fraction setNumerator: 1];
 	[fraction setDenominator: 3];
+
+	Fraction *fraction2 = [Fraction alloc];
+	fraction2 = [fraction2 init];
+	[fraction2 setNumerator: 4];
+	[fraction2 setDenominator: 5];
+	
 	NSLog(@"Fraction is: ");
 	[fraction print];
+	[fraction2 print];
     
 	[pool release];
     return 0;
