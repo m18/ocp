@@ -4,11 +4,11 @@
 - (void) setNumerator: (int) n;
 - (void) setDenominator: (int) d;
 - (void) print;
+int numerator;
+int denominator;
 @end
 
 @implementation Fraction
-int numerator;
-int denominator;
 - (void) print
 {
 	NSLog(@"%i/%i", numerator, denominator);
@@ -21,7 +21,6 @@ int denominator;
 {
 	denominator = d;
 }
-
 @end
  
 int main (int argc, const char *argv[]) {
