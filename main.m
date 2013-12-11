@@ -6,6 +6,8 @@
 }
 - (void) setNumerator: (int) n;
 - (void) setDenominator: (int) d;
+- (int) numerator;
+- (int) denominator;
 - (void) print;
 @end
 
@@ -21,6 +23,14 @@
 - (void) setDenominator: (int) d
 {
 	denominator = d;
+}
+- (int) numerator
+{
+	return numerator;
+}
+- (int) denominator
+{
+	return denominator;
 }
 @end
  
@@ -45,7 +55,8 @@ int main (int argc, const char *argv[]) {
 	[fraction setNumerator: 1];
 	[fraction setDenominator: 3];
 
-	Fraction *fraction2 = [Fraction alloc];
+	id fraction2 = [Fraction alloc];
+	fraction2 = (Fraction *)fraction2; // not necessary
 	fraction2 = [fraction2 init];
 	[fraction2 setNumerator: 4];
 	[fraction2 setDenominator: 5];
@@ -53,6 +64,8 @@ int main (int argc, const char *argv[]) {
 	NSLog(@"Fraction is: ");
 	[fraction print];
 	[fraction2 print];
+	
+	NSLog(@"Method values: %i, %i", [fraction numerator], [fraction denominator]);
     
 	[pool release];
     return 0;
