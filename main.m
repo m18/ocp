@@ -4,33 +4,41 @@
 	int numerator;
 	int denominator;
 }
-- (void) setNumerator: (int) n;
-- (void) setDenominator: (int) d;
-- (int) numerator;
-- (int) denominator;
-- (void) print;
+-(void) setNumerator: (int) n;
+-(void) setDenominator: (int) d;
+-(int) numerator;
+-(int) denominator;
+-(void) print;
+-(float) toNumber;
 @end
 
 @implementation Fraction
-- (void) print
+-(void) print
 {
 	NSLog(@"%i/%i", numerator, denominator);
 }
-- (void) setNumerator: (int) n
+-(void) setNumerator: (int) n
 {
 	numerator = n;
 }
-- (void) setDenominator: (int) d
+-(void) setDenominator: (int) d
 {
 	denominator = d;
 }
-- (int) numerator
+-(int) numerator
 {
 	return numerator;
 }
-- (int) denominator
+-(int) denominator
 {
 	return denominator;
+}
+-(float) toNumber
+{
+	if (0 == denominator)
+		return NAN;
+	else
+		return (float)numerator/denominator;
 }
 @end
  
@@ -65,8 +73,23 @@ int main (int argc, const char *argv[]) {
 	[fraction print];
 	[fraction2 print];
 	
+	NSLog(@"Result is: %f", [fraction toNumber]);
+	
 	NSLog(@"Method values: %i, %i", [fraction numerator], [fraction denominator]);
-    
+	
+	int x, y;
+	scanf("%i%i", &x, &y);
+	NSLog(@"%i", x);
+	NSLog(@"%i", y);
+	
+	int i, number, triangularNumber = 0;
+	scanf("%i", &number);
+	for (i = 0; i <= number; i++)
+	{
+		triangularNumber += i;
+		NSLog(@"%2i - %i", i, triangularNumber);
+	}
+	
 	[pool release];
     return 0;
 }
