@@ -1,47 +1,5 @@
-#import <Foundation/Foundation.h>
+#import "Fraction.h"
 
-@interface Fraction : NSObject {
-	int numerator;
-	int denominator;
-}
--(void) setNumerator: (int) n;
--(void) setDenominator: (int) d;
--(int) numerator;
--(int) denominator;
--(void) print;
--(float) toNumber;
-@end
-
-@implementation Fraction
--(void) print
-{
-	NSLog(@"%i/%i", numerator, denominator);
-}
--(void) setNumerator: (int) n
-{
-	numerator = n;
-}
--(void) setDenominator: (int) d
-{
-	denominator = d;
-}
--(int) numerator
-{
-	return numerator;
-}
--(int) denominator
-{
-	return denominator;
-}
--(float) toNumber
-{
-	if (0 == denominator)
-		return NAN;
-	else
-		return (float)numerator/denominator;
-}
-@end
- 
 int main (int argc, const char *argv[]) {
 
 	/*
@@ -73,7 +31,7 @@ int main (int argc, const char *argv[]) {
 	[fraction print];
 	[fraction2 print];
 	
-	NSLog(@"Result is: %f", [fraction toNumber]);
+	//NSLog(@"Result is: %f", [fraction toNumber]);
 	
 	NSLog(@"Method values: %i, %i", [fraction numerator], [fraction denominator]);
 	
