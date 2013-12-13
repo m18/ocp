@@ -18,14 +18,15 @@ int main (int argc, const char *argv[]) {
 	
 	Fraction *fraction = [Fraction alloc];
 	fraction = [fraction init];
-	[fraction setNumerator: 1];
-	[fraction setDenominator: 3];
+	fraction.numerator = 1;
+	fraction.denominator = 3;
 
-	id fraction2 = [Fraction alloc];
-	fraction2 = (Fraction *)fraction2; // not necessary
+	//id fraction2 = [Fraction alloc];
+	//fraction2 = (Fraction *)fraction2; // not necessary
+	Fraction *fraction2 = [Fraction alloc];
 	fraction2 = [fraction2 init];
-	[fraction2 setNumerator: 4];
-	[fraction2 setDenominator: 5];
+	fraction2.numerator = 4;
+	fraction2.denominator = 5;
 	
 	NSLog(@"Fraction is: ");
 	[fraction print];
@@ -33,7 +34,7 @@ int main (int argc, const char *argv[]) {
 	
 	//NSLog(@"Result is: %f", [fraction toNumber]);
 	
-	NSLog(@"Method values: %i, %i", [fraction numerator], [fraction denominator]);
+	NSLog(@"Method values: %i, %i", fraction.numerator, fraction.denominator);
 	
 	int x, y;
 	scanf("%i%i", &x, &y);

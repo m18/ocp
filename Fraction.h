@@ -3,9 +3,6 @@
 @interface Fraction : NSObject {
 	int numerator, denominator;
 }
-	-(int) numerator;
-	-(void) setNumerator: (int) n;
-	-(int) denominator;
-	-(void) setDenominator: (int) n;
+	@property int numerator, denominator; 
 	-(void) print;
 @end
