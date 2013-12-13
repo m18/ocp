@@ -18,15 +18,13 @@ int main (int argc, const char *argv[]) {
 	
 	Fraction *fraction = [Fraction alloc];
 	fraction = [fraction init];
-	fraction.numerator = 1;
-	fraction.denominator = 3;
-
+	[fraction setTo: 1 over: 3];
+	
 	//id fraction2 = [Fraction alloc];
 	//fraction2 = (Fraction *)fraction2; // not necessary
 	Fraction *fraction2 = [Fraction alloc];
 	fraction2 = [fraction2 init];
-	fraction2.numerator = 4;
-	fraction2.denominator = 5;
+	[fraction setTo: 4 over: 5];
 	
 	NSLog(@"Fraction is: ");
 	[fraction print];
