@@ -1,4 +1,6 @@
 #import "Fraction.h"
+#import "A.h"
+#import "B.h"
 
 int main (int argc, const char *argv[]) {
 
@@ -11,6 +13,12 @@ int main (int argc, const char *argv[]) {
  
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
+    B *b = [[B alloc] init];
+    [(A *)b initX];
+    [b print]; 
+
+    return 0;
+
     NSLog(@"***Sweet tutos***\n");
     NSLog(@"***Hello World!***\n");//This will output Hello World!
 	int sum = 25 - 37 + 19;
